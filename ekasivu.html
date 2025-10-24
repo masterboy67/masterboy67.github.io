@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <title>Minun sivu</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            color: #fff;
+            background: url("iga.jpg") no-repeat center center;
+            background-size: cover;
+            position: relative;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.4);
+            z-index: -1;
+        }
+
+        h2 {
+            margin-top: 20px;
+            font-size: 50px;
+            color: #ff4444;
+        }
+
+        a.linkstuff {
+            display: inline-block;
+            margin: 10px;
+            font-size: 24px;
+            color: #fff;
+            text-decoration: none;
+            background: #ff6600;
+            padding: 10px 15px;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        a.linkstuff:hover {
+            color: #00FFAA;
+            transform: scale(1.1);
+        }
+
+        .corner-left {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            height: 150px;
+            z-index: 1;
+        }
+
+        .corner-right {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            height: 150px;
+            z-index: 1;
+        }
+
+        .trendy-text {
+            color: #ff4444;
+            font-size: 45px;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+
+        .gallery {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .gallery img {
+            width: 120px;
+            margin: 8px;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.2) rotate(-10deg);
+            box-shadow: 5px 5px 15px rgba(0,0,0,0.7);
+        }
+    </style>
+</head>
+<body>
+
+    <img src="animation.gif" class="corner-left" alt="Left GIF">
+    <img src="animation.gif" class="corner-right" alt="Right GIF">
+
+    <h2>Minun sivu</h2>
+
+    <a class="linkstuff" href="file:///C:/Users/nguylon/OneDrive%20-%20Helsingin%20kaupunki%20kasvatus%20ja%20koulutus/html/doctype.html" target="_blank">
+        Tässä tulee minun linkki
+    </a>
+
+    <div class="trendy-text">
+        Oon Long, oon Vietnamilainen ja oon Vesalan opiskelija, oonkin pingisurheilja.
+    </div>
+
+    <p>Tervetuloa minun verkkosivusto</p>
+    <p>moooooooooooooooooooooooi</p>
+
+    <div class="gallery">
+        <img src="auto.webp" alt="Gallery 1">
+        <img src="animation.gif" alt="Gallery 2">
+        <img src="auto.webp" alt="Gallery 3">
+        <img src="animation.gif" alt="Gallery 4">
+    </div>
+
+</body>
+</html>
