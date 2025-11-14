@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <title>Minun Sivuni</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Comic Sans MS, Arial, sans-serif;
+            text-align: center;
+            color: #333;
+            background: url("iga.jpg") no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        h2 {
+            margin-top: 20px;
+            font-size: 40px;
+            color: #ff4444;
+        }
+
+        .linkstuff {
+            display: inline-block;
+            margin: 10px;
+            font-size: 28px;
+            font-weight: bold;
+            color: #ff0088;
+            text-decoration: none;
+            background: #ffff44;
+            padding: 12px 20px;
+            border-radius: 12px;
+            transition: 0.2s;
+        }
+
+        .linkstuff:hover {
+            transform: scale(1.1);
+            color: #00aaff;
+            background: #ffcc00;
+        }
+
+        .corner-gif {
+            position: fixed;
+            height: 100px;
+        }
+        .corner-top-left { top: 10px; left: 10px; }
+        .corner-top-right { top: 10px; right: 10px; }
+        .corner-bottom-left { bottom: 10px; left: 10px; }
+        .corner-bottom-right { bottom: 10px; right: 10px; }
+
+        .gallery img {
+            width: 100px;
+            margin: 5px;
+            border-radius: 8px;
+        }
+
+        .content-section {
+            background: rgba(255,255,255,0.7);
+            margin: 15px auto;
+            padding: 15px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 600px;
+            text-align: left;
+        }
+
+        .highlight-gif {
+            position: fixed;
+            height: 150px;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+
+    <img src="animation.gif" class="corner-gif corner-top-left" alt="Top Left GIF">
+    <img src="animation.gif" class="corner-gif corner-top-right" alt="Top Right GIF">
+    <img src="tom.gif" class="corner-gif corner-bottom-left" alt="Bottom Left GIF">
+    <img src="sonic.gif" class="corner-gif corner-bottom-right" alt="Bottom Right GIF">
+
+    <img src="sixseven.gif" class="highlight-gif" id="highlightGif" alt="Highlight GIF">
+
+    <h2>Minun Sivuni</h2>
+
+    <a href="doctype.html" class="linkstuff">Tässä tulee minun linkki</a>
+    <a href="index.html" class="linkstuff">Index.html</a>  
+    <a href="doctypehtml.html" class="linkstuff">doctypehtml.html</a>
+
+    <div class="content-section">
+        <h3>Tervetuloa!</h3>
+        <p>Tämä sivu kertoo minusta ja harrastuksistani.</p>
+    </div>
+
+    <div class="gallery">
+        <img src="auto.webp" alt="Gallery 1">
+        <img src="auto.webp" alt="Gallery 2">
+    </div>
+
+    <div class="content-section">
+        <h3>Harrastukset</h3>
+        <p>Pingis, musiikki ja web-kehitys.</p>
+    </div>
+
+    <div class="content-section">
+        <h3>Kiitos!</h3>
+        <p>Toivottavasti pidit sivustani!</p>
+    </div>
+
+    <script>
+        const gif = document.getElementById('highlightGif');
+        let x = window.innerWidth/2;
+        let y = window.innerHeight/2;
+        let dx = 2;
+        let dy = 2;
+        const padding = 150;
+
+        function moveGif() {
+            x += dx;
+            y += dy;
+
+            if(x < padding || x > window.innerWidth - padding) dx = -dx;
+            if(y < padding || y > window.innerHeight - padding) dy = -dy;
+
+            gif.style.left = x + 'px';
+            gif.style.top = y + 'px';
+
+            requestAnimationFrame(moveGif);
+        }
+
+        moveGif();
+    </script>
+
+</body> 
+
+</html>
